@@ -1,6 +1,6 @@
 version: v1.1.0
 steps:
-  - build: -t $Registry/server:01 -t $Registry/server -f Dockerfile .
+  - build: t {{.Run.Registry}}/{{.Run.TaskName}} -t {{.Run.Registry}}/{{.Run.TaskName}}:{{.Run.ID}}_{{.Run.Commit}} -f Dockerfile .
   - push:
-    - $Registry/server
-    - $Registry/server:01
+    - $Registry/{{.Run.TaskName}}
+    - $Registry/{{.Run.TaskName}}:{{.Run.ID}}_{{.Run.Commit}}
