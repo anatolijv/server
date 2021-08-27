@@ -1,7 +1,7 @@
 version: v1.1.0
 steps:
-- build: -t $Registry/{{.Run.TaskName}}:{{.Run.ID}} -t $Registry/{{.Run.TaskName}} -f Dockerfile .
+- build: -t $Registry/server:{{.Run.ID}} -t $Registry/server -f Dockerfile .
 # Push images
  - push:
-  - $Registry/{{.Run.TaskName}}
-  - $Registry/{{.Run.TaskName}}:{{.Run.ID}}
+  - $Registry/server
+  - $Registry/server:{{.Run.ID}}
