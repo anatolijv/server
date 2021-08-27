@@ -1,6 +1,6 @@
 version: v1.1.0
 steps:
- - build: -t $Registry/server:01 -t $Registry/server -f Dockerfile .
- - push:
-  - $Registry/server
-  - $Registry/server:01
+  - build: -t $Registry/server:01 -t $Registry/server -f Dockerfile .
+  - push:
+    - $Registry/server
+    - $Registry/server:01
